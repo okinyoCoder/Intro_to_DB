@@ -17,12 +17,12 @@ CREATE TABLE IF NOT EXISTS Customers(
     email VARCHAR(215)
     address TEXT
 );
-CREATE TABLE IF NOT EXISTS Orders(
+CREATE TABLE Orders(
     order_id PRIMARY KEY
     order_date DATE
     FOREIGN KEY customer_id REFERENCES Customers (customer_id)
 );
-CREATE TABLE IF NOT EXISTS Order_Details(
+CREATE TABLE Order_Details(
     orderdetailid PRIMARY KEY
     quantity DOUBLE
     FOREIGN KEY order_id REFERENCES Orders (order_id)
